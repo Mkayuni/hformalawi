@@ -1,62 +1,91 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Button, Avatar } from '@mui/material';
-import WavingHandIcon from '@mui/icons-material/WavingHand'; // Example icon
+import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import './home.css';
 
-const skills = [
-  { name: 'Java', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-  { name: 'Python', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-  { name: 'JavaScript', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'React', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'MySQL', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-  { name: 'Django', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
-  { name: 'HTML', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+const initiatives = [
+  {
+    title: 'Education for All',
+    image: '/images/education.jpeg', // Correct path for the image
+    description: 'Providing access to quality education and resources to empower the youth of Malawi.',
+  },
+  {
+    title: 'Healthcare Improvements',
+    image: '/public/images/healthcare.jpg',
+    description: 'Enhancing healthcare facilities and access to ensure a healthier community.',
+  },
+  {
+    title: 'Agriculture Development',
+    image: '/public/images/agriculture.jpg',
+    description: 'Promoting sustainable farming practices and improving food security.',
+  },
+  {
+    title: 'Clean Water Access',
+    image: '/public/images/water.jpg',
+    description: 'Ensuring access to clean and safe drinking water for all communities.',
+  },
+  {
+    title: 'Women Empowerment',
+    image: '/public/images/women.jpg',
+    description: 'Empowering women through education, skill development, and entrepreneurship.',
+  },
+  {
+    title: 'Environmental Conservation',
+    image: '/public/images/environment.jpg',
+    description: 'Protecting natural resources and promoting environmental sustainability.',
+  },
 ];
 
 const Home = () => {
   return (
-    <Container>
-      <Box textAlign="center" my={4} className="intro">
-        <Box className="intro-container"> {/* Added Box for styling */}
+    <div className="home-wrapper">
+      <Box textAlign="center" className="hero-container">
+        <Box className="intro-container">
           <Typography variant="h2" component="h1" gutterBottom className="title">
-            Hello, I'm Moses
+            Welcome to Heart for Malawi
           </Typography>
-          <Typography variant="h5" gutterBottom className="subtitle" display="flex" alignItems="center" justifyContent="center">
-            Welcome to my Page <WavingHandIcon sx={{ ml: 1, color: 'primary.main', fontSize: '2rem' }} />
+          <Typography
+            variant="h5"
+            gutterBottom
+            className="subtitle"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            Empowering and transforming communities in Malawi through integrated and sustainable development programs
           </Typography>
-          <Typography variant="body1" paragraph className="description">
-            I am a software developer, with a versatile background encompassing an MBA in Data Analytics & Healthcare Administration, and I am currently pursuing a Master's in Computer Science. With experience as a Teaching Assistant and Business Analyst, I have mastered the art of blending business strategy with technical expertise. I am fervently committed to exploring innovative opportunities at the dynamic intersection of technology and business.
-          </Typography>
+          <Button variant="contained" color="primary" className="explore-button" href="#initiatives">
+            Explore Our Work
+          </Button>
         </Box>
       </Box>
-      <Box my={4}>
-        <Typography variant="h4" component="h2" gutterBottom className="skills-title">
-          Skills
+      <Container my={6}>
+        <Typography variant="h4" component="h2" gutterBottom className="section-title">
+          Our Initiatives
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {skills.map((skill, index) => (
-            <Grid item xs={6} sm={4} md={3} key={index}>
-              <Box display="flex" flexDirection="column" alignItems="center" className="skill-card">
-                <Avatar src={skill.image} alt={skill.name} variant="square" className="skill-avatar" />
-                <Typography variant="h6" className="skill-name">{skill.name}</Typography>
+        <Grid container spacing={4} justifyContent="center" className="initiatives-container">
+          {initiatives.map((initiative, index) => (
+            <Grid item xs={12} sm={6} md={6} key={index} className="initiative">
+              <Box className="image-container">
+                <img
+                  src={initiative.image}
+                  alt={initiative.title}
+                  className="rectangular-image"
+                />
+                <Typography variant="h6" className="image-description">
+                  {initiative.title}
+                </Typography>
+                <Typography variant="body2" className="image-text">
+                  {initiative.description}
+                </Typography>
+                <Button variant="outlined" color="primary" className="learn-more-button">
+                  Learn More
+                </Button>
               </Box>
             </Grid>
           ))}
         </Grid>
-      </Box>
-      <Box textAlign="center" my={4}>
-        <Button variant="contained" color="primary" onClick={() => window.open('https://drive.google.com/file/d/1AX4I3C_fztSOthmQ_X39NO3xtf14zN3p/view', '_blank')} className="resume-button">
-          Download Resume
-        </Button>
-        <iframe
-          src="https://drive.google.com/file/d/1AX4I3C_fztSOthmQ_X39NO3xtf14zN3p/preview"
-          width="100%"
-          height="700px"
-          className="resume-iframe"
-        ></iframe>
-      </Box>
-    </Container>
+      </Container>
+    </div>
   );
 };
 
