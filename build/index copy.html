@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kayunilow11</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="small_screen_logic.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Collapsible menu icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Collapsible menu -->
+            <nav class="menu">
+                <a href="#" onclick="toggleSection('home')">Home</a>
+                <a href="#" onclick="toggleSection('about')">About</a>
+                <a href="#" onclick="redirectToGitHub()">GitHub</a>
+                <a href="#" onclick="toggleSection('projects')">Projects</a>
+                <a href="#" onclick="toggleSection('contact')">Contact</a>
+            </nav>
+            <h1></h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <main>
+            <section id="home" class="section">
+        
+                <!-- Greeting section with bold text -->
+                <div id="greeting">
+                    <h2 style="font-family: 'Arial Black', sans-serif; color: #2c3e50; font-size: 2.5rem; margin-bottom: 20px;">Hello, I'm Moses </h2>
+                </div>
+
+                <!-- Border line -->
+                  <hr class="section-divider">
+                            
+                <!-- Welcome message -->
+                <div id="welcome-message">
+                    <p style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e; margin-bottom: 20px;">Welcome to my Website.</p>
+                    <br>
+                    <p style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e; "> I am a software developer, with a versatile background encompassing an MBA in Data Analytics & Healthcare Administration, and I am currently pursuing a Master's in Computer Science. With experience as a Teaching Assistant and Business Analyst, I have mastered the art of blending business strategy with technical expertise. I am fervently committed to exploring innovative opportunities at the dynamic intersection of technology and business.</p>
+                </div>
+                
+                <!-- Skills section -->
+                <section id="skills">
+                    <h3 style="font-size: 2rem;">Skills</h3>
+                    <ul>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/javatb.png" alt="Java Logo">
+                                <span>Java</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/pythontb.png" alt="Python Logo">
+                                <span>Python</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/javascripttb2.webp" alt="JavaScript Logo">
+                                <span>JavaScript</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/Reacttb.webp" alt="React Logo">
+                                <span>React</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/mysqlltb.png" alt="MySQL Logo">
+                                <span>MySQL</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/djangotb.png" alt="Django Logo">
+                                <span>Django</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/HTMLtb.webp" alt="HTML Logo">
+                                <span>HTML</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skill-item">
+                                <img src="images/CSS3_logotb.png" alt="CSS Logo">
+                                <span>CSS</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Resume button -->
+                    <button id="resume-button" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #fff;" onclick="redirectToResume()">Download Resume</button>
+                    <!-- Resume iframe -->
+                    <iframe src="https://drive.google.com/file/d/1AX4I3C_fztSOthmQ_X39NO3xtf14zN3p/preview" width="100%" height="700px"></iframe>
+                </section>                
+            </section>
+
+            <section id="about" class="section hidden">
+                <div class="about-heading-border">
+                    <h2>About Me</h2>
+                </div>
+                <div class="toggle-switch">
+                    <span>Personal Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="toggleButton" onchange="toggleRecruiterMode()">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Recruiter Mode</span>
+                </div>
+                <div class="about-container" style="margin-top: 0.5in;">
+                    <div class="about-text" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;">
+                        <p id="personalModeText">
+                            Hello, I'm Moses Kayuni, currently studying for a Master's degree in Computer Sciences at Western Kentucky University, class of May 2025. As a teaching assistant in the Computer Science department, I assist students with labs, tutoring, and grading assignments. Beyond academia, I'm a passionate musician, proficient in bass, electric, and acoustic guitars. I enjoy performing with different bands, finding inspiration in the creative process of music. Additionally, I'm an avid soccer enthusiast, both as a player and spectator, relishing the excitement of the sport.
+                        </p>
+                        <!-- Recruiter mode text (initially hidden) -->
+                        <p id="recruiterModeText" style="display: none;">
+                            I have experience in data analytics and software development, and I'm passionate about working with large datasets and creating innovative software. I excel at combining business and technology, using my analytical skills for creative problem-solving. Whether it's analyzing complex data or developing/managing software projects, I'm always eager to take on new challenges. I enjoy creating digital projects like apps, websites, and games, which not only stimulate my mind but also offer enjoyable challenges.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/mois1 (1).jpg" alt="Your Name">
+                    </div>
+                </div>
+            </section>          
+            
+        </section>
+        <section id="contact" class="section hidden">
+            <h2>Contact Me: </h2>
+            <!-- Provided contact section -->
+            <form id="contact-form" action="https://getform.io/f/PdRZW0dG?redirect=index.htm#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Connect</button>
+            </form>
+        </section>
+            
+            <section id="projects" class="section hidden">
+                <div class=""> <!-- Container div for the border -->
+                    
+                </div>
+                
+                <section id="completed-projects"> <!-- New section for completed projects -->
+                    <div class="container">
+                        <div class="section-heading-border">
+                            <h2>Completed Projects</h2>
+                        </div>
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="images/LotoMalawi.jpeg" alt="Project 1">
+                                <div class="project-description" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;">
+                                    <h3>LotaAndroid</h3> 
+                                    <p>
+                                        LotaAndroid is a captivating mobile app that combines entertainment with education, offering an immersive Chichewa language learning experience. Inspired by the "Heads Up Game," it empowers users to select thematic categories like Common Phrases and Animals, dynamically populating with Chichewa word pairs. Tilt and swing gestures facilitate seamless navigation and interaction, while a gamified scoring system adds excitement and motivation. Timed challenges intensify gameplay, fostering efficiency in learning. Chichewa, the primary language in Malawi, takes center stage in this journey towards proficiency, making LotaAndroid an invaluable tool for language learners.
+                                    </p>
+                                    <!-- Buttons -->
+                                    <div class="buttons" style="margin-top: 10px;"> <!-- Add margin-top for space -->
+                                        <span class="button-text" style="border: 1px solid black;">Java</span> <!-- Text styled like button -->
+                                        <span class="button-text" style="border: 1px solid black;">Android Studio</span> <!-- Text styled like button -->
+                                        <a href="https://github.com/Mkayuni/LotoAndroid" target="_blank"><button>Source</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="project-divider"> <!-- Solid border line -->
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="images/Paista.png" alt="Project 2">
+                                <div class="project-description" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;">
+                                    <h3>Paista</h3> <!-- Title in bigger letters -->
+                                    <p>
+                                       Paista is an educational discussion board app for students and instructors, emphasizing QA-style interactions. This is our own take on Piazza.
+                                    </p>
+                                    <!-- Buttons -->
+                                    <div class="buttons" style="margin-top: 10px;"> <!-- Add margin-top for space -->
+                                        <span class="button-text" style="border: 1px solid black;">Node.js</span> <!-- Text styled like button -->
+                                        <span class="button-text" style="border: 1px solid black;">React</span> <!-- Text styled like button -->
+                                        <span class="button-text" style="border: 1px solid black;">SQlite</span> <!-- Text styled like button -->
+                                         <a href="https://github.com/Lockwood-02/Paista" target="_blank"><button>Source</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="project-divider"> <!-- Solid border line -->
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="images/fifth.png" alt="Project 3">
+                                <div class="project-description" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;">
+                                    <h3>SharePoint Sites</h3> <!-- Title in bigger letters -->
+                                    <p>
+                                        During my time at Fifth Third Bank in the Wholesales Department, I helped improve how teams communicate internally by working on the design and development of SharePoint sites. I used HTML, CSS, and some React to create user-friendly interfaces that made it easier for everyone to collaborate effectively within the department.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="project-divider"> <!-- Solid border line -->
+                        <!-- Add more projects and corresponding dividers as needed -->
+                    </div>
+                </section>
+            
+                <!-- Ongoing projects -->
+                <section id="ongoing-projects">
+                    <div class="container">
+                        <div class="section-heading-border">
+                            <h2>Ongoing Projects</h2>
+                        </div>
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="images/Designer.png" alt="Ongoing Project 1">
+                                <div class="project-description" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;">
+                                    <h3>AutoER(Auto-grade)</h3>
+                                    <p>The AutoER project will automatically generate ER diagrams from marked language inputs, such as strings and tables, creating relationships. It will integrate language models for grading and real-time feedback, utilizing Mermaid for diagram visualization.
+</p>
+                                    <p>
+                                    <!-- Buttons or additional information -->
+                                        <!-- Add buttons or other content here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="project-divider">
+                        <div class="project">
+                            <div class="project-content">
+                                <img src="images/coming_Soon.jpg" alt="Coming Soon">
+                                <div class="project-description" style="font-family: 'Georgia', serif; font-size: 1.2rem; color: #34495e;"></div>
+                                    <h3>Tool Capacity App</h3>
+                                    <p>This app will assist Schneider Electric's Industrial Manufacturing department in calculating machine hours, material usage, and annual tool capacities based on the provided forecasts.</p>
+                                    <!-- Buttons or additional information -->
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="project-divider">
+                        <!-- Add more ongoing projects and dividers as needed -->
+                    </div>
+                </section>
+            
+                <section id="contact" class="section hidden">
+                    <!-- Content for contact section -->
+                </section>            
+                
+                <script src="script.js"></script>
+            
+            </main>
+        </div>
+
+    <footer>
+        <div class="footer-content">
+            <!-- LinkedIn logo -->
+            <a href="https://www.linkedin.com/in/moses-kayuni-7915709b/" target="_blank">
+                <img src="images/linkd1.png" alt="" width="30" height="30">
+            </a>
+            <!-- GitHub logo -->
+            <a href="https://github.com/Mkayuni" target="_blank">
+                <img src="images/gith.png" alt="" width="30" height="30">
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Kayuni Moses D. All rights reserved
+        </div>
+    </footer>
+    
+</body>
+
+</html>
