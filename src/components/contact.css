@@ -1,79 +1,139 @@
-/* src/components/contact.css */
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    padding-top: 1in; /* Move the form down by 2 inches */
-  }
-  
-  .section {
-    padding: 40px; /* Increase padding for a bigger form */
-    max-width: 800px; /* Increase max width for a bigger form */
-    margin: 0 auto;
-    background: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    font-size: 2.5rem; /* Increase font size for heading */
-    margin-bottom: 30px;
-    text-transform: uppercase;
-  }
-  
-  .form-group {
-    margin-bottom: 30px; /* Increase margin between form groups */
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px; /* Increase space between label and input */
-    color: #555;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 15px; /* Increase padding for inputs and textarea */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.2rem; /* Increase font size */
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #1976d2;
-    outline: none;
-  }
-  
-  button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 15px; /* Increase padding for the button */
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.5rem; /* Increase font size */
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #125a9e;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f7f7f7;
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-  }
-  
+.giving-container {
+  padding-top: 20px;
+}
+
+.giving-background-section {
+  background-image: url('/public/images/cds.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.giving-background-text {
+  font-size: 2rem;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Darkened background for better text visibility */
+  border-radius: 10px;
+  padding: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centering the text container */
+}
+
+.giving-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.giving-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.giving-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  margin-left: 3in; /* Move the section to the right by 3 inches */
+}
+
+.giving-options {
+  margin-top: 40px;
+}
+
+.giving-card {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border: 4px solid transparent; /* Base border */
+  background-clip: padding-box; /* To clip the background to padding */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.giving-card:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #faa307, #ffba08);
+  z-index: -1;
+  border-radius: 20px; /* Match border-radius of the card */
+}
+
+.giving-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #faa307, #ffba08);
+  z-index: -1;
+  filter: blur(10px); /* Blurring effect for a glow */
+}
+
+.giving-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  border-color: #faa307; /* Change border color on hover */
+}
+
+.giving-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #fff; /* Adding a border to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.giving-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.giving-card-text {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.giving-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1976d2;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+}
+
+.giving-button:hover {
+  background-color: #125a9e;
+}

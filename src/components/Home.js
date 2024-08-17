@@ -1,89 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import './home.css';
 
-const initiatives = [
-  {
-    title: 'Education for All',
-    image: '/images/education.jpeg', // Correct path for the image
-    description: 'Providing access to quality education and resources to empower the youth of Malawi.',
-  },
-  {
-    title: 'Healthcare Improvements',
-    image: '/public/images/healthcare.jpg',
-    description: 'Enhancing healthcare facilities and access to ensure a healthier community.',
-  },
-  {
-    title: 'Agriculture Development',
-    image: '/public/images/agriculture.jpg',
-    description: 'Promoting sustainable farming practices and improving food security.',
-  },
-  {
-    title: 'Clean Water Access',
-    image: '/public/images/water.jpg',
-    description: 'Ensuring access to clean and safe drinking water for all communities.',
-  },
-  {
-    title: 'Women Empowerment',
-    image: '/public/images/women.jpg',
-    description: 'Empowering women through education, skill development, and entrepreneurship.',
-  },
-  {
-    title: 'Environmental Conservation',
-    image: '/public/images/environment.jpg',
-    description: 'Protecting natural resources and promoting environmental sustainability.',
-  },
-];
+const Home = ({ toggleSection }) => {
+  const [showFullStory, setShowFullStory] = useState(false);
 
-const Home = () => {
+  const toggleStory = () => {
+    setShowFullStory(!showFullStory);
+  };
+
   return (
     <div className="home-wrapper">
+      {/* Hero Section */}
       <Box textAlign="center" className="hero-container">
         <Box className="intro-container">
-          <Typography variant="h2" component="h1" gutterBottom className="title">
-            Welcome to Heart for Malawi
+          <Typography
+            variant="h2"
+            component="h1"
+            gutterBottom
+            sx={{ color: '#2c3e50 !important', fontWeight: 'bold' }}
+          >
+            Welcome to Grace of God Ministries
           </Typography>
           <Typography
             variant="h5"
             gutterBottom
-            className="subtitle"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            sx={{ color: '#2c3e50 !important', fontWeight: 'bold' }}
           >
-            Empowering and transforming communities in Malawi through integrated and sustainable development programs
+            Empowering and transforming communities through faith and action
           </Typography>
-          <Button variant="contained" color="primary" className="explore-button" href="#initiatives">
-            Explore Our Work
-          </Button>
+
+          {/* Explore Our Works Section */}
+          <Box className="explore-section">
+            <Typography
+              variant="body1"
+              className="explore-link"
+              onClick={() => toggleSection('projects')}
+            >
+              Explore Our Works
+            </Typography>
+          </Box>
         </Box>
       </Box>
-      <Container my={6}>
-        <Typography variant="h4" component="h2" gutterBottom className="section-title">
-          Our Initiatives
+
+      {/* Our Story Section */}
+      <Container className="our-story-section">
+        <Typography variant="h3" component="h3" className="our-story-title">
+          Our Story
         </Typography>
-        <Grid container spacing={4} justifyContent="center" className="initiatives-container">
-          {initiatives.map((initiative, index) => (
-            <Grid item xs={12} sm={6} md={6} key={index} className="initiative">
-              <Box className="image-container">
-                <img
-                  src={initiative.image}
-                  alt={initiative.title}
-                  className="rectangular-image"
-                />
-                <Typography variant="h6" className="image-description">
-                  {initiative.title}
-                </Typography>
-                <Typography variant="body2" className="image-text">
-                  {initiative.description}
-                </Typography>
-                <Button variant="outlined" color="primary" className="learn-more-button">
-                  Learn More
-                </Button>
-              </Box>
+        <Typography variant="h5" component="h4" className="scripture-text">
+        "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you invited me in, I needed clothes and you clothed me, I was sick and you looked after me, I was in prison and you came to visit me... Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me."
+        </Typography>
+        <Typography variant="h6" component="p" className="scripture-reference">
+        Matthew 25:35-36, 40 (NIV)
+        </Typography>
+        <Box className="story-content">
+          <Box className="fancy-box">
+            <Typography variant="body1" className="story-text">
+              {showFullStory
+                ? "Grace of God Ministries was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable. We started our journey in a small village, where we saw the need for community support and spiritual guidance. Over the years, we have grown into a ministry that touches the lives of many, offering not just material assistance, but also the love and support that comes from a community grounded in faith."
+                : "Grace of God Ministries was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable."
+              }
+            </Typography>
+            <Button className="read-more-btn" onClick={toggleStory}>
+              {showFullStory ? "Read Less" : "Read More"}
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+
+      {/* Vision and Mission Section */}
+      <Box textAlign="center" className="vision-mission-section">
+        <Box className="vision-mission-container">
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6} className="vision-mission-border">
+              <Typography variant="h4" className="vision-mission-title">
+                Our Vision
+              </Typography>
+              <Typography variant="body1" className="vision-mission-text">
+                To see transformed communities where the love of Christ is demonstrated through practical help.
+              </Typography>
             </Grid>
-          ))}
-        </Grid>
+            <Grid item xs={12} md={6} className="vision-mission-border">
+              <Typography variant="h4" className="vision-mission-title">
+                Our Mission
+              </Typography>
+              <Typography variant="body1" className="vision-mission-text">
+                To serve the most vulnerable through faith-driven action, providing support in education, health, and spiritual care.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+
+      {/* Newsletter Section */}
+      <Container className="newsletter-section">
+        <Typography variant="h4" component="h3" className="newsletter-title">
+          Newsletter
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: '#0066ff',
+            fontWeight: 'bold',
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+            display: 'inline-block',
+            borderBottom: '2px solid #0066ff',
+            paddingBottom: '2px',
+          }}
+        >
+          Subscribe to our Newsletter
+        </Typography>
       </Container>
     </div>
   );

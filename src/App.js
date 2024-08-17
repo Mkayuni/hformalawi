@@ -39,7 +39,7 @@ function App() {
         >
           {appTheme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
-        {section === 'home' && <Home />}
+        {section === 'home' && <Home toggleSection={toggleSection} />} {/* Pass the toggleSection function */}
         {section === 'about' && <About />}
         {section === 'projects' && <Projects />}
         {section === 'contact' && <Contact />}

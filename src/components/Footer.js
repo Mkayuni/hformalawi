@@ -38,7 +38,7 @@ const Footer = () => {
         </a>
       </Box>
       <Typography variant="body2" className="copyright" sx={{ color: isDarkMode ? '#fff' : '#000' }}>
-        &copy; 2024 Kayuni Moses D. All rights reserved
+        &copy; 2024 Heart for Malawi. All rights reserved
       </Typography>
     </Box>
   );

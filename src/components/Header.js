@@ -53,7 +53,7 @@ const Header = ({ toggleSection }) => {
           {menuOpen ? <CloseIcon sx={{ color: theme.palette.mode === 'light' ? '#000' : '#fff' }} /> : <MenuIcon sx={{ color: theme.palette.mode === 'light' ? '#000' : '#fff' }} />}
         </IconButton>
         <Typography className="header-signature">
-          Kayuni Moses
+          Heart for Malawi
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <IconButton onClick={toggleTheme} sx={{ ml: 1 }}>
@@ -91,13 +91,6 @@ const Header = ({ toggleSection }) => {
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Typography>
           ))}
-          <Typography
-            className="menu-item"
-            onClick={() => window.open('https://github.com/Mkayuni', '_blank')}
-            sx={{ cursor: 'pointer', my: 1 }}
-          >
-            GitHub
-          </Typography>
         </Box>
       )}
     </AppBar>
