@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/hformalawi/static/css/main.be3cc522.css",
-    "main.js": "/hformalawi/static/js/main.e54b6730.js",
+    "main.css": "/hformalawi/static/css/main.56872d21.css",
+    "main.js": "/hformalawi/static/js/main.27524e58.js",
     "static/js/488.bfa6ee5d.chunk.js": "/hformalawi/static/js/488.bfa6ee5d.chunk.js",
     "static/media/one.jpeg": "/hformalawi/static/media/one.0f5194fc4585cfba8101.jpeg",
     "static/media/four.jpeg": "/hformalawi/static/media/four.1e512a9135529cc7d6c2.jpeg",
     "static/media/three.jpeg": "/hformalawi/static/media/three.b96c70d2168ee6e4f66a.jpeg",
     "static/media/cds.jpg": "/hformalawi/static/media/cds.bf69ab38f1bcf686f8c7.jpg",
     "index.html": "/hformalawi/index.html",
-    "main.be3cc522.css.map": "/hformalawi/static/css/main.be3cc522.css.map",
-    "main.e54b6730.js.map": "/hformalawi/static/js/main.e54b6730.js.map",
+    "main.56872d21.css.map": "/hformalawi/static/css/main.56872d21.css.map",
+    "main.27524e58.js.map": "/hformalawi/static/js/main.27524e58.js.map",
     "488.bfa6ee5d.chunk.js.map": "/hformalawi/static/js/488.bfa6ee5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be3cc522.css",
-    "static/js/main.e54b6730.js"
+    "static/css/main.56872d21.css",
+    "static/js/main.27524e58.js"
   ]
 }
