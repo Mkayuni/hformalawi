@@ -20,7 +20,7 @@ const Home = ({ toggleSection }) => {
             gutterBottom
             sx={{ color: '#2c3e50 !important', fontWeight: 'bold' }}
           >
-            Welcome to Grace of God Ministries
+           Welcome to Heart for Malawi Ministries! 
           </Typography>
           <Typography
             variant="h5"
@@ -58,8 +58,8 @@ const Home = ({ toggleSection }) => {
           <Box className="fancy-box">
             <Typography variant="body1" className="story-text">
               {showFullStory
-                ? "Grace of God Ministries was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable. We started our journey in a small village, where we saw the need for community support and spiritual guidance. Over the years, we have grown into a ministry that touches the lives of many, offering not just material assistance, but also the love and support that comes from a community grounded in faith."
-                : "Grace of God Ministries was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable."
+                ? "Heart for Malawi was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable. We started our journey in a small village, where we saw the need for community support and spiritual guidance. Over the years, we have grown into a ministry that touches the lives of many, offering not just material assistance, but also the love and support that comes from a community grounded in faith."
+                : "Heart for Malawi founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable."
               }
             </Typography>
             <Button className="read-more-btn" onClick={toggleStory}>

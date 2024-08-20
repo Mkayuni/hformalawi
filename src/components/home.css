@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px; /* Adds space below the hero section */
+  position: relative;
+  z-index: 1;
 }
 
 .intro-container {
@@ -17,7 +20,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   max-width: 800px;
-  margin-bottom: 40px;
 }
 
 .explore-section {
@@ -36,8 +38,9 @@
   padding-bottom: 2px;
 }
 
+/* Our Story Section */
 .our-story-section {
-  margin-top: 60px;
+  margin-top: 40px; /* Adds space below the hero section */
   margin-bottom: 60px;
   text-align: center;
 }
@@ -155,4 +158,31 @@
   display: inline-block;
   border-bottom: 2px solid #0066ff;
   padding-bottom: 2px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    height: auto; /* Adjust height to prevent overflow */
+    padding-top: 20px;
+  }
+
+  .intro-container {
+    padding: 20px;
+  }
+
+  .vision-mission-section {
+    height: auto; /* Adjust height to prevent overflow */
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .vision-mission-container {
+    padding: 20px;
+  }
+
+  .our-story-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 }
