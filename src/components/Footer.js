@@ -25,7 +25,7 @@ const Footer = () => {
           <img src={process.env.PUBLIC_URL + '/images/insta.png'} alt="Instagram" width="45" height="45" style={{ margin: '0 10px' }} />
         </a>
         <a href="https://www.facebook.com/www.heartformalawi.org/" target="_blank" rel="noopener noreferrer">
-          <img src={process.env.PUBLIC_URL + '/images/facebool.png'} alt="Facebook" width="45" height="45" style={{ margin: '0 10px' }} />
+          <img src={process.env.PUBLIC_URL + '/images/fb.png'} alt="Facebook" width="45" height="45" style={{ margin: '0 10px' }} />
         </a>
       </Box>
       <Typography variant="body2" className="copyright" sx={{ color: isDarkMode ? '#fff' : '#000' }}>

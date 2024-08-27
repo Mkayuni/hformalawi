@@ -8,7 +8,7 @@
 
 /* Hero Section */
 .projects-hero-container {
-  background-image: url('/public/images/four.jpeg');
+  background-image: url('/public/images/DSC04770\ 1.jpeg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -104,6 +104,39 @@
 
 .project-card:hover .project-image {
   filter: grayscale(0%);
+}
+
+/* Gallery Container */
+.gallery-container {
+  margin-top: 40px;
+}
+
+.gallery-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.gallery-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+
+.gallery-image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Adjustments */

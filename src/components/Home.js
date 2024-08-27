@@ -9,6 +9,11 @@ const Home = ({ toggleSection }) => {
     setShowFullStory(!showFullStory);
   };
 
+  const handleSubscribeClick = () => {
+    const emailBody = `If you would like to join our monthly newsletter list to receive updates, please provide your desired email address here and click send. If the email address this link directed you to is correct, simply click send.`;
+    window.location.href = `mailto:info@heartformalawi.org?subject=Subscribe to Newsletter&body=${encodeURIComponent(emailBody)}`;
+  };
+
   return (
     <div className="home-wrapper">
       {/* Hero Section */}
@@ -20,7 +25,7 @@ const Home = ({ toggleSection }) => {
             gutterBottom
             sx={{ color: '#2c3e50 !important', fontWeight: 'bold' }}
           >
-           Welcome to Heart for Malawi Ministries! 
+            Welcome to Heart for Malawi Ministries!
           </Typography>
           <Typography
             variant="h5"
@@ -49,17 +54,17 @@ const Home = ({ toggleSection }) => {
           Our Story
         </Typography>
         <Typography variant="h5" component="h4" className="scripture-text">
-        "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you invited me in, I needed clothes and you clothed me, I was sick and you looked after me, I was in prison and you came to visit me... Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me."
+          "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you invited me in, I needed clothes and you clothed me, I was sick and you looked after me, I was in prison and you came to visit me... Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me."
         </Typography>
         <Typography variant="h6" component="p" className="scripture-reference">
-        Matthew 25:35-36, 40 (NIV)
+          Matthew 25:35-36, 40 (NIV)
         </Typography>
         <Box className="story-content">
           <Box className="fancy-box">
             <Typography variant="body1" className="story-text">
               {showFullStory
                 ? "Heart for Malawi was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable. We started our journey in a small village, where we saw the need for community support and spiritual guidance. Over the years, we have grown into a ministry that touches the lives of many, offering not just material assistance, but also the love and support that comes from a community grounded in faith."
-                : "Heart for Malawi founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable."
+                : "Heart for Malawi was founded with the mission to bring hope and change to communities in need. Through our programs, we aim to provide education, health services, and spiritual guidance to those who need it most. Our story is one of faith, dedication, and a relentless pursuit of a better future for the vulnerable."
               }
             </Typography>
             <Button className="read-more-btn" onClick={toggleStory}>
@@ -109,6 +114,7 @@ const Home = ({ toggleSection }) => {
             borderBottom: '2px solid #0066ff',
             paddingBottom: '2px',
           }}
+          onClick={handleSubscribeClick}
         >
           Subscribe to our Newsletter
         </Typography>

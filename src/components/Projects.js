@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 import './projects.css';
 
@@ -9,19 +9,9 @@ const projects = [
     image: process.env.PUBLIC_URL + '/images/five.jpeg',
   },
   {
-    title: 'Grace of God Food Ministries',
-    description: 'Grace of God Food Ministries is dedicated to nurturing the most vulnerable children in rural Malawi. Our orphanage program is designed to provide a stable and loving home for children who have lost their parents. We focus on creating a community that supports the holistic development of each child, offering not only essential resources like food and shelter but also education, mentorship, and emotional care. Through this program, we aim to instill hope and foster resilience, helping these children to grow into confident and capable individuals who can contribute positively to their communities.',
-    image: process.env.PUBLIC_URL + '/images/four.jpeg',
-  },
-  {
-    title: 'Community Health Outreach',
-    description: 'Our community health outreach programs aim to improve the health and well-being of rural communities by providing essential medical services and health education. The program focuses on preventive healthcare, maternal and child health, and managing common diseases in Malawi.',
-    image: process.env.PUBLIC_URL + '/images/three.jpeg',
-  },
-  {
     title: 'The Farm - Sustainable Agriculture Initiatives and Church Planting',
     description: 'This project promotes sustainable agricultural practices among rural farmers in Malawi. By providing training and resources, we help farmers increase crop yields, improve soil health, and adopt environmentally friendly farming techniques. The Farm is also looking to plant a church on the grounds.',
-    image: process.env.PUBLIC_URL + '/images/two.jpeg',
+    image: process.env.PUBLIC_URL + '/images/tse.jpeg',
   },
 ];
 
@@ -41,7 +31,27 @@ const ProjectCard = ({ project }) => (
   </Paper>
 );
 
+const GalleryCard = ({ image }) => (
+  <Box className="gallery-image-container">
+    <img src={image} alt="Gallery" className="gallery-image" />
+  </Box>
+);
+
 const Projects = () => {
+  const [galleryImages, setGalleryImages] = useState([]);
+
+  useEffect(() => {
+    // Fetch the list of images from the backend
+    fetch('/api/images')
+      .then(response => response.json())
+      .then(data => {
+        const imageUrls = data.map(fileName => `/gallery/${fileName}`);
+        console.log(imageUrls); // Log URLs to console
+        setGalleryImages(imageUrls);
+      })
+      .catch(error => console.error('Error fetching images:', error));
+  }, []);
+
   return (
     <div className="projects-wrapper">
       {/* Introductory Section */}
@@ -59,6 +69,20 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Grid item xs={12} key={index}>
               <ProjectCard project={project} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Gallery Section */}
+      <Container className="gallery-container">
+        <Typography variant="h4" component="h3" className="gallery-title">
+          Gallery
+        </Typography>
+        <Grid container spacing={4}>
+          {galleryImages.map((image, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <GalleryCard image={image} />
             </Grid>
           ))}
         </Grid>

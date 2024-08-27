@@ -14,32 +14,30 @@
 
 .menu-item {
     font-size: 1.2rem;
-    padding: 20px;
+    padding: 10px 20px; /* Adjust padding around the text */
     color: white;
-    width: 100%;
     text-align: center;
-    position: relative;
     text-transform: uppercase;
     justify-content: center; /* Center the text */
-    display: flex; /* Ensure flex display */
+    display: inline-block; /* Ensure only the text is clickable */
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .menu-item:hover {
-    color: #0066ff; /* Change the color on hover */
+    color: #b61a1a; /* Change the color on hover */
     transform: scale(1.05); /* Slightly enlarge the text on hover */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 1024px) { /* For tablets and smaller */
     .menu-item {
-        width: 100vw;
+        width: auto; /* Remove full width to ensure only text is clickable */
     }
 }
 
 @media screen and (max-width: 768px) { /* For small screens */
     .menu-item {
-        width: 100vw;
+        width: auto; /* Remove full width to ensure only text is clickable */
     }
 }
 

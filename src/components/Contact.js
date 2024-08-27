@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, Grid, Button, Paper, IconButton } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import ToastNotification from './ToastNotification'; // Import the toast notification component
 import './contact.css';
 
 const Contact = () => {
   const [showAddress, setShowAddress] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
 
   const handleGetAddressClick = () => {
     setShowAddress(true);
@@ -12,8 +14,11 @@ const Contact = () => {
 
   const handleCopyToClipboard = () => {
     const address = "7402 N 400 E, North Manchester, IN 46962\ninfo@heartformalawi.org";
-    navigator.clipboard.writeText(address);
-    alert('Address copied to clipboard!');
+    navigator.clipboard.writeText(address).then(() => {
+      setToastVisible(true); // Show toast notification
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
   };
 
   return (
@@ -79,12 +84,19 @@ const Contact = () => {
                 )}
               </Box>
               <Box className="giving-image-container">
-                <img src={process.env.PUBLIC_URL + '/images/four.jpeg'} alt="Mail-In Donation" className="giving-image" />
+                <img src={process.env.PUBLIC_URL + '/images/donate.jpeg'} alt="Mail-In Donation" className="giving-image" />
               </Box>
             </Paper>
           </Grid>
         </Grid>
       </Container>
+
+      {/* Toast Notification */}
+      <ToastNotification 
+        message="Address copied to clipboard!" 
+        visible={toastVisible} 
+        onClose={() => setToastVisible(false)} 
+      />
     </div>
   );
 };

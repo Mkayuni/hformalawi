@@ -41,6 +41,13 @@ const Header = ({ toggleSection }) => {
     handleMenuClose();
   };
 
+  const sectionDisplayNames = {
+    home: 'Home',
+    about: 'Team',     // Change 'about' to 'Team'
+    projects: 'Projects',
+    contact: 'Give'    // Change 'contact' to 'Give'
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -88,7 +95,7 @@ const Header = ({ toggleSection }) => {
               onClick={() => handleMenuItemClick(section)}
               sx={{ cursor: 'pointer', my: 1 }}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {sectionDisplayNames[section]} {/* Use the mapped display name */}
             </Typography>
           ))}
         </Box>
